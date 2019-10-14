@@ -62,3 +62,23 @@ var model = {
     }
 };
 
+function parseGuess(guess) {
+    var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
+
+    if (guess === null || guess.length !== 2) {
+        alert("Wpisz dwa znaki litere i cyfre!")
+    } else {
+        var firstChar = guess.charAt(0);
+        var row = alphabet.indexOf(firstChar);
+        var column = guess.charAt(1);
+
+        if (isNaN(column) || isNaN(row)) {
+            alert("To nie są prawidłowe Współrzedne!");
+        } else if (row < 0 || row >= model.boardSize || column < 0 || column >= model.boardSize) {
+            alert("Strzał po za planszą!");
+        } else {
+            return row + column;
+        }
+    }
+    return null;
+}
