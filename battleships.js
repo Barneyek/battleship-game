@@ -97,3 +97,17 @@ var controller = {
         }
     }
 };
+
+function handleFireButton() {
+    var guessInput = document.getElementById("guessInput");
+    var guess = guessInput.value.toUpperCase();
+
+    controller.processGuess(guess);
+    guessInput.value = "";
+}
+window.onload = init;
+
+function init() {
+    var fireButton = document.getElementById("fireButton");
+    fireButton.onclick = handleFireButton;
+}
