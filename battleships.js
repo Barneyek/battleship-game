@@ -150,4 +150,5 @@ window.onload = init;
 function init() {
     var fireButton = document.getElementById("fireButton");
     fireButton.onclick = handleFireButton;
+    model.generateShipLocations();
 }
